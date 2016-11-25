@@ -1,0 +1,36 @@
+{
+    "networkMode": "bridge",
+    "containerDefinitions": [
+        {
+            "volumesFrom": [],
+            "memory": 1536,
+            "portMappings": [
+                {
+                    "hostPort": 3000,
+                    "containerPort": 3000,
+                    "protocol": "tcp"
+                }
+            ],
+            "essential": true,
+            "mountPoints": [
+                {
+                    "containerPath": "/var/log/",
+                    "sourceVolume": "LOGS"
+                }
+            ],
+            "name": "artocbi-dev-bi",
+            "environment": [],
+            "image": "<<repo>>/<<tag>>:<<version>>",
+            "cpu": 768
+        }
+    ],
+    "volumes": [
+        {
+            "host": {
+                "sourcePath": "/var/log/containerlogs"
+            },
+            "name": "LOGS"
+        }
+    ],
+    "family": "artocbi-ppe-bi-app"
+}

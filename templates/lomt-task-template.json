@@ -1,0 +1,33 @@
+{
+    "networkMode": "bridge",
+    "containerDefinitions": [
+        {
+            "volumesFrom": [],
+            "memory": 1536,
+            "portMappings": [
+                {
+                    "hostPort": 443,
+                    "containerPort": 443,
+                    "protocol": "tcp"
+                }
+            ],
+            "essential": true,
+            "mountPoints": [],
+            "name": "lomt",
+            "environment": [
+                {
+                    "name": "EPS_BASE",
+                    "value": "https:\\/\\/component-lib-dev.pearson.com\\/c2\\/ac9db77e-0d93-4d0d-8147-9cb8647dc0da\\/lomt"
+                },
+                {
+                    "name": "HOST",
+                    "value": "staging-lomt.pearsoncms.net"
+                }
+            ],
+            "image": "<<repo>>/<<tag>>:<<version>>",
+            "cpu": 1024
+        }
+    ],
+    "volumes": [],
+    "family": "lomt-app"
+}
