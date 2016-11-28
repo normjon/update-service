@@ -14,7 +14,7 @@ TASK_DEF_FILE="$BASEDIR/task-definition-$TAG-$VERSION.json"
 echo ${TEMPLATE}
 sed -e "s;<<tag>>;${TAG};g" ${BASEDIR}/templates/${TEMPLATE} > ${FILE_TEMP}
 sed -e "s;<<repo>>;${REPO};g" ${FILE_TEMP} > ${FILE_TEMP}_1
-sed -e "s;<<version>>;${VERSION};g" ${BASEDIR}/${FILE_TEMP}_1 > ${TASK_DEF_FILE}
+sed -e "s;<<version>>;${VERSION};g" ${FILE_TEMP}_1 > ${TASK_DEF_FILE}
 aws configure set region ${REGION}
 aws ecs register-task-definition --family ${FAMILY} --cli-input-json file://${TASK_DEF_FILE}
 TASK_REVISION=`aws ecs describe-task-definition --task-definition ${FAMILY}| egrep "revision" | tr "/" " " | awk '{print $2}' | sed 's/"$//'`
