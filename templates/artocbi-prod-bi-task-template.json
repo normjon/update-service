@@ -18,8 +18,13 @@
                     "sourceVolume": "LOGS"
                 }
             ],
-            "name": "artocbi-dev-bi",
-            "environment": [],
+            "name": "artocbi-prod-bi",
+            "environment": [
+                {
+                    "name": "NODE_ENV",
+                    "value": "prod"
+                }
+            ],
             "image": "<<repo>>/<<tag>>:<<version>>",
             "cpu": 768
         }

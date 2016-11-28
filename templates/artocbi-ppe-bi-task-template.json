@@ -18,8 +18,13 @@
                     "sourceVolume": "LOGS"
                 }
             ],
-            "name": "artocbi-dev-bi",
-            "environment": [],
+            "name": "artocbi-ppe-bi",
+            "environment": [
+                {
+                    "name": "NODE_ENV",
+                    "value": "ppe"
+                }
+            ],
             "image": "<<repo>>/<<tag>>:<<version>>",
             "cpu": 768
         }

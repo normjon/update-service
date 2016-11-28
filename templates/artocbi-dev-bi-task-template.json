@@ -19,7 +19,12 @@
                 }
             ],
             "name": "artocbi-dev-bi",
-            "environment": [],
+            "environment": [
+                {
+                    "name": "NODE_ENV",
+                    "value": "dev"
+                }
+            ],
             "image": "<<repo>>/<<tag>>:<<version>>",
             "cpu": 768
         }
