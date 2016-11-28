@@ -11,7 +11,6 @@ FAMILY=$(grep family $BASEDIR/configs/$CONF.cfg | awk '{split($0,a,":"); print a
 TEMPLATE=$(grep template $BASEDIR/configs/$CONF.cfg | awk '{split($0,a,":"); print a[2]}')
 FILE_TEMP="$BASEDIR/task-definition-$1.json"
 TASK_DEF_FILE="$BASEDIR/task-definition-$TAG-$VERSION.json"
-echo ${TEMPLATE}
 sed -e "s;<<tag>>;${TAG};g" ${BASEDIR}/templates/${TEMPLATE} > ${FILE_TEMP}
 sed -e "s;<<repo>>;${REPO};g" ${FILE_TEMP} > ${FILE_TEMP}_1
 sed -e "s;<<version>>;${VERSION};g" ${FILE_TEMP}_1 > ${TASK_DEF_FILE}
