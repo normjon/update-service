@@ -21,7 +21,7 @@
                 },
                 {
                     "name": "HOST",
-                    "value": "test.lomt.pearson.com"
+                    "value": "staging.lomt.pearson.com"
                 }
             ],
             "image": "<<repo>>/<<tag>>:<<version>>",
